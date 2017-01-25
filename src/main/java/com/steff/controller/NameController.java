@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class NameController {
 	@RequestMapping("/myName/{name}")
 	public String getMessage(@PathVariable(value = "name") String name) {
-		System.out.println(name);
-		if (name.equalsIgnoreCase("Gulshan")) {
+		String gName = "Gulshan";
+		if (name.equalsIgnoreCase(gName)) {
 			return (name + " is retarded");
 		} else {
 			return ("Hello " + name);
