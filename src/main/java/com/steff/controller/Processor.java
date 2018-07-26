@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class Processor {
 
-	@Scheduled(fixedDelay = 3000)
+	@Scheduled(fixedDelay = 600000)
 	public void getDataFronServer() {
 		RestTemplate restTemplate = new RestTemplate();
 		Thread t = new Thread(new Runnable() {
