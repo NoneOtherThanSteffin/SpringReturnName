@@ -11,15 +11,6 @@ public class Processor {
 	@Scheduled(fixedDelay = 600000)
 	public void getDataFronServer() {
 		RestTemplate restTemplate = new RestTemplate();
-		Thread t = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				ResponseEntity<String> value = restTemplate
-						.getForEntity("https://messageservicesteffin.herokuapp.com/myName/Steffin", String.class);
-				System.out.println("Scheduled Method Call : Value : " + value.getBody());
-			}
-		});
-		//t.start();
 		ResponseEntity<String> value = restTemplate
 				.getForEntity("http://messageservicesteffin.herokuapp.com/myName/Steffin", String.class);
 		System.out.println("Scheduled Method Call : Value : " + value.getBody());
